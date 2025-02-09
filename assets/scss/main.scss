@@ -1,0 +1,37 @@
+@use 'reset';
+@use 'fonts';
+
+html {
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #E2D4B7;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+}
+
+body {
+    background-color: #A1A499;
+
+    ::selection {
+        background-color: #CADBC8;
+        color: #000000;
+    }
+
+    ::-webkit-selection {
+        background-color: #CADBC8;
+        color: #000000;
+    }
+}
