@@ -86,6 +86,11 @@ onMounted(() => {
 
     &__title {
         font-size: 10rem;
+        color: $color-beige;
+        text-transform: uppercase;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
 
         @media (max-width: 1335px) {
             font-size: 8rem;
@@ -102,12 +107,6 @@ onMounted(() => {
         @media (max-width: 520px) {
             font-size: 2.5rem;
         }
-
-        color: $color-beige;
-        text-transform: uppercase;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
 
         &-row {
             height: 1.1em;
