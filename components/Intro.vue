@@ -32,16 +32,16 @@ import { gsap } from 'gsap';
 const titleFrontend = 'Frontend';
 const titleDeveloper = 'Developer';
 
-// Define the tags to be displayed
 const tags = [
-    'Creative', 'Developer', 'Problem Solver', 'BEM Practitioner', 'Tech Innovator', 'Task Manager Developer'
+    'Creative', 'Developer', 'Problem Solver', 'BEM Practitioner',
+    'Tech Innovator', 'Task Manager Developer', 'Performance Optimizer', 
+    'Responsive Design Advocate', 'Web Accessibility Advocate', 'Component-Driven Developer', 
+    'State Management Expert', 'Micro Frontends Enthusiast'
 ];
 
-// Extend the tags array for the marquee effect
 const tagsExtended = [...tags, ...tags];
 
-onMounted(() => {
-    // Animate the title letters
+const animateIntro = () => {
     gsap.from('.intro__letter', {
         y: -300,
         stagger: 0.1,
@@ -49,7 +49,6 @@ onMounted(() => {
         ease: 'power2.out'
     });
 
-    // Animate the tags in a marquee effect
     gsap.to('.intro__item', {
         x: '+=1800',
         duration: 100,
@@ -57,7 +56,6 @@ onMounted(() => {
         repeat: -1
     });
 
-    // Animate the icon to rotate 360 degrees continuously
     gsap.to('.intro__icon', {
         rotation: 360,
         duration: 5,
@@ -72,40 +70,58 @@ onMounted(() => {
         yoyo: true,
         repeat: -1
     });
-});
+};
+
+onMounted(animateIntro);
 </script>
 
 <style lang="scss" scoped>
-.intro {
-    padding: 5rem;
-    height: 100vh;
+@mixin responsive-font($size-large, $size-medium, $size-small, $size-xsmall) {
+    font-size: $size-large;
 
-    @media (max-width: 1335px) {
-        padding: 6rem 1rem;
+    @media (max-width: 1530px) {
+        font-size: $size-medium;
     }
 
+    @media (max-width: 1010px) {
+        font-size: $size-small;
+    }
+
+    @media (max-width: 820px) {
+        font-size: $size-xsmall;
+    }
+}
+
+@mixin responsive-padding($padding-large, $padding-medium, $padding-small) {
+    padding: $padding-large;
+
+    @media (max-width: 1335px) {
+        padding: $padding-medium;
+    }
+
+    @media (max-height: 720px) {
+        padding: $padding-small;
+    }
+}
+
+.intro {
+    @include responsive-padding(5rem, 6rem 1rem, 1rem);
+    height: 100vh;
+
     &__title {
-        font-size: 10rem;
+        @include responsive-font(10rem, 8rem, 6rem, 4rem);
         color: $color-beige;
         text-transform: uppercase;
         text-align: center;
         display: flex;
         flex-direction: column;
 
-        @media (max-width: 1335px) {
-            font-size: 8rem;
-        }
-
-        @media (max-width: 1010px) {
-            font-size: 6rem;
-        }
-
-        @media (max-width: 820px) {
-            font-size: 4rem;
-        }
-
         @media (max-width: 520px) {
             font-size: 2.5rem;
+        }
+
+        @media (max-height: 768px) and (min-width: 1128px) {
+            font-size: 3.5rem;
         }
 
         &-row {
@@ -122,6 +138,10 @@ onMounted(() => {
 
     &__tags {
         padding: 5rem 0;
+
+        @media (max-height: 634px) {
+            display: none;
+        }
     }
 
     &__marquee {
@@ -158,30 +178,24 @@ onMounted(() => {
 
     &__scroll-indicator {
         position: absolute;
-        bottom: 2rem;
+        bottom: 0.5rem;
         left: 50%;
         transform: translateX(-50%);
         text-align: center;
         color: $color-beige;
         font-size: 1.5rem;
+
+        @media (max-width: 960px) {
+            font-size: 1rem;
+        }
     }
 
     &__scroll-text {
         display: block;
-        margin-bottom: 0.5rem;
-
-        @media (max-width: 1335px) {
-            font-size: 1.5rem;
-        }
     }
 
     &__scroll-arrow {
         display: block;
-        font-size: 2rem;
-
-        @media (max-width: 1335px) {
-            font-size: 1.5rem;
-        }
     }
 }
 </style>
