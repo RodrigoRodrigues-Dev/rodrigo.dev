@@ -105,16 +105,16 @@ onMounted(animateIntro);
 }
 
 .intro {
-    @include responsive-padding(5rem, 6rem 1rem, 1rem);
     height: 100vh;
+    @include responsive-padding(5rem, 6rem 1rem, 1rem);
 
     &__title {
-        @include responsive-font(10rem, 8rem, 6rem, 4rem);
+        display: flex;
+        flex-direction: column;
         color: $color-beige;
         text-transform: uppercase;
         text-align: center;
-        display: flex;
-        flex-direction: column;
+        @include responsive-font(10rem, 8rem, 6rem, 4rem);
 
         @media (max-width: 520px) {
             font-size: 2.5rem;
