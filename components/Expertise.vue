@@ -106,17 +106,13 @@ onMounted(() => {
     }
 
     &__title {
-        margin-bottom: 4rem;
-        font-size: 5rem;
+        margin-bottom: 7rem;
+        font-size: 4.5rem;
         color: $color-beige;
         height: 1.075em;
         overflow-y: hidden;
 
-        @media (max-width: 960px) {
-            font-size: 3.5rem;
-        }
-
-        @media (max-width: 1075px) {
+        @media (max-width: 1760px) {
             font-size: 3rem;
         }
 
