@@ -1,24 +1,28 @@
 <template>
-    <section class="projects-section">
-        <h1 class="projects-section__title">Projetos</h1>
-        <div class="projects-section__container">
-            <div class="projects-section__container-names" ref="container">
+    <section class="projects">
+        <div class="projects__balls">
+            <div class="projects__ball projects__ball--1"></div>
+            <div class="projects__ball projects__ball--2"></div>
+        </div>
+        <h1 class="projects__title">Projetos</h1>
+        <div class="projects__container">
+            <div class="projects__container-names" ref="container">
                 <div v-for="(project, index) in projects" :key="index" @mouseover="setMainImage(project.projectImage)"
-                    @mouseleave="resetMainImage()" class="projects-section__project-text-container">
-                    <a :href="project.projectLink" target="_blank" class="projects-section__project-text">{{ project.projectName }}</a>
-                    <a :href="project.projectLink" target="_blank" class="projects-section__project-text-bottom">{{ project.projectName }}
-                        <svg viewBox="0 0 24 24" class="arrow-work" style="width: 2rem; height: 2rem;">
+                    @mouseleave="resetMainImage()" class="projects__project-text-container">
+                    <a :href="project.projectLink" target="_blank" class="projects__project-text">{{ project.projectName }}</a>
+                    <a :href="project.projectLink" target="_blank" class="projects__project-text--bottom">{{ project.projectName }}
+                        <svg viewBox="0 0 24 24" class="projects__arrow-work" style="width: 2rem; height: 2rem;">
                             <path fill="#E2D4B7" d="M3.2 23.3.7 20.8 17.5 4h-15V.5h21v21H20v-15L3.2 23.3Z"></path>
                             <path fill="#E2D4B7" d="M3.2 24 0 20.8 16.3 4.5H2V0h22v22h-4.5V7.7L3.2 24ZM20 6.5v15h3.5V.5h-21V4h15L.7 20.8l2.5 2.5L20 6.5Z"></path>
                         </svg>
                     </a>
                 </div>
             </div>
-            <div class="projects-section__tooltip-card">
+            <div class="projects__tooltip-card">
                 <img v-for="(project, index) in projects" :key="index" :src="project.projectImage" alt=""
-                    style="transform: translateY(100%);" class="projects-section__tooltip-card-image" :ref="el => tooltipImages[index] = el">
+                    style="transform: translateY(100%);" class="projects__tooltip-card-image" :ref="el => tooltipImages[index] = el">
             </div>
-            <div class="projects-section__background-ball"></div>
+            <div class="projects__background-ball"></div>
         </div>
     </section>
 </template>
@@ -70,7 +74,7 @@ const animateText = (elements, yStart, yEnd) => {
         for (const char of text) {
             const span = document.createElement('span');
             span.innerText = char.trim() === '' ? '\u00A0' : char;
-            span.classList.add('projects-section__letter');
+            span.classList.add('projects__letter');
             element.appendChild(span);
         }
         
@@ -79,7 +83,7 @@ const animateText = (elements, yStart, yEnd) => {
         }
         
         element.parentElement.addEventListener('mouseenter', () => {
-            gsap.to(element.querySelectorAll('.projects-section__letter'), {
+            gsap.to(element.querySelectorAll('.projects__letter'), {
                 y: yEnd,
                 stagger: 0.03,
                 ease: 'power1.inOut',
@@ -96,7 +100,7 @@ const animateText = (elements, yStart, yEnd) => {
         });
         
         element.parentElement.addEventListener('mouseleave', () => {
-            gsap.to(element.querySelectorAll('.projects-section__letter'), {
+            gsap.to(element.querySelectorAll('.projects__letter'), {
                 y: yStart,
                 stagger: 0.03,
                 ease: 'power1.inOut',
@@ -116,16 +120,16 @@ const animateText = (elements, yStart, yEnd) => {
 
 onMounted(async () => {
     await fetchData();
-    const letters = container.value.querySelectorAll('.projects-section__project-text');
-    const lettersBottom = container.value.querySelectorAll('.projects-section__project-text-bottom');
+    const letters = container.value.querySelectorAll('.projects__project-text');
+    const lettersBottom = container.value.querySelectorAll('.projects__project-text--bottom');
     animateText(letters, '0%', '-100%');
     animateText(lettersBottom, '100%', '0%');
 });
 </script>
 
 <style lang="scss">
-.projects-section {
-    overflow: hidden;
+.projects {
+    overflow-x: hidden;
     position: relative;
     height: 100vh;
     display: flex;
@@ -182,7 +186,7 @@ onMounted(async () => {
     }
 
     &__project-text,
-    &__project-text-bottom {
+    &__project-text--bottom {
         text-decoration: none;
         color: $color-beige;
         font-size: 3.5rem;
@@ -214,7 +218,7 @@ onMounted(async () => {
         font-family: 'Gunterz';
     }
 
-    &__project-text-bottom .projects-section__letter {
+    &__project-text--bottom .projects__letter {
         transform: translateY(100%);
     }
 
@@ -262,5 +266,31 @@ onMounted(async () => {
             display: none;
         }
     }
+}
+
+.projects__balls {
+    position: absolute;
+    display: flex;
+    top: 10%; 
+    right: 70%;
+    transform: rotate(-60deg);
+    gap: 2rem;
+
+    @media (max-width: 1180px) {
+        display: none;
+    }
+}
+
+.projects__ball {
+    z-index: 9999;
+    height: 120px;
+    width: 120px;
+    border-radius: 100%;
+    background-color: $color-beige;
+}
+
+.projects__ball--1 {
+    height: 40px;
+    width: 40px
 }
 </style>
