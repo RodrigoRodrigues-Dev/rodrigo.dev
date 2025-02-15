@@ -2,7 +2,7 @@
     <section class="expertise">
         <div class="expertise__container">
             <h2 class="expertise__title">
-                <span v-for="(letter, index) in title" :key="index" class="expertise__title-letter">{{ letter }}</span>
+                <span v-for="(letter, index) in title" :key="index" class="expertise__title__letter">{{ letter }}</span>
             </h2>
             <div class="expertise__grid">
                 <ExpertiseCard v-for="(card, index) in cards" :key="index" :icon="card.icon" :title="card.title"
@@ -10,6 +10,12 @@
             </div>
         </div>
         <div class="expertise__background-ball"></div>
+        <RouterLink to="AboutMe">
+            <div class="about-me">
+                <p class="about-me__text">mais sobre mim</p>
+                <div class="about-me__bar"></div>
+            </div>
+        </RouterLink>
     </section>
 </template>
 
@@ -58,7 +64,7 @@ const setScrollTriggerValues = () => {
     const startValue = 'top 70%';
     const endValue = 'bottom 120%';
 
-    gsap.from('.expertise__title-letter', {
+    gsap.from('.expertise__title__letter', {
         y: -100,
         stagger: 0.1,
         scrollTrigger: {
@@ -120,7 +126,7 @@ onMounted(() => {
             font-size: 2rem;
         }
 
-        &-letter {
+        &__letter {
             display: inline-block;
             font-family: 'Gunterz';
             transform: translateY(0px);
@@ -160,6 +166,39 @@ onMounted(() => {
         @media (max-width: 1600px) {
             display: none;
         }
+    }
+}
+
+.about-me {
+    text-align: right;
+    color: $color-beige;
+    margin: 5rem 10rem 5rem auto;
+    width: 260px;
+
+    @media (max-width: 1290px) {
+        margin: 5rem 3rem 2rem auto;
+    }
+
+    &__text {
+        font-family: 'Gunterz';
+        cursor: pointer;
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+    }
+
+    &:hover {
+        &__bar {
+            width: 0%;
+            margin-left: auto;
+        }
+    }
+
+    &__bar {
+        transition: all ease 0.7s;
+        background-color: $color-beige;
+        width: 100%;
+        height: 5px;
     }
 }
 </style>
