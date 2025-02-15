@@ -188,7 +188,7 @@ onMounted(() => {
     }
 
     &:hover {
-        &__bar {
+        .about-me__bar {
             width: 0%;
             margin-left: auto;
         }
