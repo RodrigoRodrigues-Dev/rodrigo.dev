@@ -95,6 +95,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .expertise {
+    padding: 1rem 0;
     position: relative;
     height: auto;
     width: 100%;
