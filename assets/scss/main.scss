@@ -1,7 +1,10 @@
 @use 'reset';
 @use 'fonts';
+@use 'colors';
 
 html {
+    scroll-behavior: smooth;
+
     ::-webkit-scrollbar {
         width: 8px;
         height: 10px;
@@ -13,25 +16,40 @@ html {
     }
 
     ::-webkit-scrollbar-thumb {
-        background: #E2D4B7;
+        background: $color-beige;
         border-radius: 10px;
     }
 
     ::-webkit-scrollbar-thumb:hover {
-        background: #555;
+        background: $color-davys-grey;
     }
 }
 
 body {
-    background-color: #A1A499;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+
+    a {
+        text-decoration: none;
+    }
+
+    background-color: $color-mist;
+
+    @media (max-width: 1761px) {
+        font-size: 14px;
+    }
 
     ::selection {
-        background-color: #CADBC8;
-        color: #000000;
+        background-color: $color-grayish-lime-green;
+        color: $color-black;
     }
 
     ::-webkit-selection {
-        background-color: #CADBC8;
-        color: #000000;
+        background-color: $color-grayish-lime-green;
+        color: $color-black;
     }
+}
+
+section {
+    background-color: $color-mist;
 }
