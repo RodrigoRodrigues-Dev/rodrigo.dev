@@ -1,12 +1,12 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <Header />
-    <Intro />
-    <Expertise />
-    <Projects />
-    <DevServices />
-    <ContactSection />
-    <Footer />
+  <Header />
+  <Intro />
+  <Expertise />
+  <Projects />
+  <DevServices />
+  <ContactSection />
+  <Footer />
 </template>
 
-<script setup>
-</script>
+<script setup></script>

@@ -6,24 +6,35 @@
       <div class="about-me__container">
         <div class="about-me__section about-me__section--first">
           <p class="about-me__text about-me__text--first">
-            Olá, meu nome é Rodrigo e sou um desenvolvedor apaixonado por transformar ideias em experiências
-            digitais marcantes. Sou formado em Análise e Desenvolvimento de Sistemas, o que ampliou minha
-            visão sobre engenharia de software, metodologias ágeis e a importância de um planejamento bem
-            estruturado em cada projeto.
+            Olá, meu nome é Rodrigo e sou um desenvolvedor apaixonado por
+            transformar ideias em experiências digitais marcantes. Sou formado
+            em Análise e Desenvolvimento de Sistemas, o que ampliou minha visão
+            sobre engenharia de software, metodologias ágeis e a importância de
+            um planejamento bem estruturado em cada projeto.
           </p>
-          <svg class="about-me__icon" viewBox="0 0 29 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
+          <svg
+            class="about-me__icon"
+            viewBox="0 0 29 34"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
               d="M0.75 32.2422C0.75 33.4141 1.29688 34 2.39062 34H5.95312C7.04688 34 7.59375 33.4141 7.59375 32.2422V20.4297H9.32812C10.6719 20.4297 12.0234 20.9375 13.3828 21.9531C14.7578 22.9531 15.7031 23.875 16.2188 24.7188L20.9531 32.6172C21.5 33.5391 22.2031 34 23.0625 34H27.1406C28.5938 34 28.8906 33.3281 28.0312 31.9844L22.875 23.8516C22.3906 23.1016 21.7656 22.2266 21 21.2266C20.2344 20.2266 19.1016 19.4453 17.6016 18.8828V18.8359C20.3672 18.3516 22.6484 17.3672 24.4453 15.8828C26.2422 14.3984 27.1406 12.4062 27.1406 9.90625C27.1406 6.54688 26.0312 4.125 23.8125 2.64062C21.5938 1.14062 18.0703 0.390625 13.2422 0.390625H2.39062C1.29688 0.390625 0.75 0.976562 0.75 2.14844V6.10001H8V6.10938H12.9141C15.3828 6.10938 17.25 6.36719 18.5156 6.88281C19.7969 7.38281 20.4375 8.47656 20.4375 10.1641C20.4375 11.7109 19.7734 12.8438 18.4453 13.5625C17.1328 14.2656 14.9141 14.6172 11.7891 14.6172H8V14.62H0.75V32.2422Z"
-              fill="$color-beige" />
+              fill="$color-beige"
+            />
           </svg>
         </div>
         <div class="about-me__section about-me__section--second">
           <div class="about-me__ball"></div>
           <p class="about-me__text">
-            Minha jornada no desenvolvimento começou com a curiosidade de entender como a tecnologia pode
-            melhorar o dia a dia das pessoas, e hoje me especializo em ferramentas como NodeJS, VueJS, Nuxt,
-            JQuery, JavaScript, TypeScript, HTML, CSS, SASS, Bootstrap (inclusive BootStrap 5), LESS, Gulp,
-            Grunt, Parcel, Babel e Git. Esse conhecimento diversificado me permite abordar projetos de forma
+            Minha jornada no desenvolvimento começou com a curiosidade de
+            entender como a tecnologia pode melhorar o dia a dia das pessoas, e
+            hoje me especializo em ferramentas como NodeJS, VueJS, Nuxt, JQuery,
+            JavaScript, TypeScript, HTML, CSS, SASS, Bootstrap (inclusive
+            BootStrap 5), LESS, Gulp, Grunt, Parcel, Babel e Git. Esse
+            conhecimento diversificado me permite abordar projetos de forma
             completa e integrada, sempre focando na excelência e na inovação.
           </p>
         </div>
@@ -32,19 +43,30 @@
       <div class="about-me__cards-container">
         <div class="about-me__cards">
           <div class="about-me__card">
-            <p>Desenvolvendo aplicações web de alta performance e escaláveis.</p>
+            <p>
+              Desenvolvendo aplicações web de alta performance e escaláveis.
+            </p>
             <div class="about-me__card-bar"></div>
           </div>
           <div class="about-me__card">
-            <p>Projetando interfaces interativas e responsivas para melhor experiência do usuário.</p>
+            <p>
+              Projetando interfaces interativas e responsivas para melhor
+              experiência do usuário.
+            </p>
             <div class="about-me__card-bar"></div>
           </div>
           <div class="about-me__card">
-            <p>Otimizando a usabilidade e acessibilidade com as melhores práticas de UI/UX.</p>
+            <p>
+              Otimizando a usabilidade e acessibilidade com as melhores práticas
+              de UI/UX.
+            </p>
             <div class="about-me__card-bar"></div>
           </div>
           <div class="about-me__card">
-            <p>Utilizando metodologias ágeis para entregar projetos eficientes e inovadores.</p>
+            <p>
+              Utilizando metodologias ágeis para entregar projetos eficientes e
+              inovadores.
+            </p>
             <div class="about-me__card-bar"></div>
           </div>
         </div>
@@ -54,7 +76,12 @@
     </div>
     <div class="about-me__loading-text">Carregando...</div>
     <div class="about-me__overlay">
-      <div class="about-me__block" v-for="n in 20" :key="n" :class="'about-me__block--' + n"></div>
+      <div
+        class="about-me__block"
+        v-for="n in 20"
+        :key="n"
+        :class="'about-me__block--' + n"
+      ></div>
     </div>
   </div>
 </template>
@@ -65,7 +92,11 @@ import { TweenMax, Power1, Expo } from 'gsap';
 
 const isLoading = ref(true);
 
-if (typeof window !== 'undefined' && window.history && 'scrollRestoration' in window.history) {
+if (
+  typeof window !== 'undefined' &&
+  window.history &&
+  'scrollRestoration' in window.history
+) {
   window.history.scrollRestoration = 'manual';
 }
 
@@ -78,13 +109,18 @@ onMounted(() => {
     window.scrollTo(0, 0);
   }, 10);
 
-  TweenMax.staggerFrom(".about-me__block", 0.8, {
-    width: "0",
-    ease: Power1.easeIn,
-    delay: 2,
-  }, 0.04);
+  TweenMax.staggerFrom(
+    '.about-me__block',
+    0.8,
+    {
+      width: '0',
+      ease: Power1.easeIn,
+      delay: 2
+    },
+    0.04
+  );
 
-  TweenMax.to(".about-me__loading-text", 1, {
+  TweenMax.to('.about-me__loading-text', 1, {
     x: 2,
     opacity: 0,
     ease: Expo.easeInOut,
@@ -92,13 +128,13 @@ onMounted(() => {
   });
 
   TweenMax.staggerFrom(
-    ".about-me__header, .about-me__contact-section, .about-me__footer, .about-me__title, .about-me__text, .about-me__section, .about-me__container",
+    '.about-me__header, .about-me__contact-section, .about-me__footer, .about-me__title, .about-me__text, .about-me__section, .about-me__container',
     2,
     {
       opacity: 0,
       y: 30,
       ease: Expo.easeInOut,
-      delay: 3,
+      delay: 3
     },
     0.06
   );
@@ -292,7 +328,8 @@ watch(isLoading, (newValue) => {
     }
 
     @media (max-width: 1585px) {
-      &::after, &::before {
+      &::after,
+      &::before {
         display: none;
       }
     }
@@ -311,7 +348,6 @@ watch(isLoading, (newValue) => {
 
     @media (max-width: 1280px) {
       font-size: 3vw;
-      
     }
   }
 
@@ -367,26 +403,66 @@ watch(isLoading, (newValue) => {
     height: 100vh;
     background-color: $color-mist;
 
-    &--1 { left: 0; }
-    &--2 { left: 5%; }
-    &--3 { left: 10%; }
-    &--4 { left: 15%; }
-    &--5 { left: 20%; }
-    &--6 { left: 25%; }
-    &--7 { left: 30%; }
-    &--8 { left: 35%; }
-    &--9 { left: 40%; }
-    &--10 { left: 45%; }
-    &--11 { left: 50%; }
-    &--12 { left: 55%; }
-    &--13 { left: 60%; }
-    &--14 { left: 65%; }
-    &--15 { left: 70%; }
-    &--16 { left: 75%; }
-    &--17 { left: 80%; }
-    &--18 { left: 85%; }
-    &--19 { left: 90%; }
-    &--20 { left: 95%; }
+    &--1 {
+      left: 0;
+    }
+    &--2 {
+      left: 5%;
+    }
+    &--3 {
+      left: 10%;
+    }
+    &--4 {
+      left: 15%;
+    }
+    &--5 {
+      left: 20%;
+    }
+    &--6 {
+      left: 25%;
+    }
+    &--7 {
+      left: 30%;
+    }
+    &--8 {
+      left: 35%;
+    }
+    &--9 {
+      left: 40%;
+    }
+    &--10 {
+      left: 45%;
+    }
+    &--11 {
+      left: 50%;
+    }
+    &--12 {
+      left: 55%;
+    }
+    &--13 {
+      left: 60%;
+    }
+    &--14 {
+      left: 65%;
+    }
+    &--15 {
+      left: 70%;
+    }
+    &--16 {
+      left: 75%;
+    }
+    &--17 {
+      left: 80%;
+    }
+    &--18 {
+      left: 85%;
+    }
+    &--19 {
+      left: 90%;
+    }
+    &--20 {
+      left: 95%;
+    }
   }
 }
 </style>
