@@ -1,15 +1,14 @@
 /* eslint-disable no-undef */
 import { createPinia } from 'pinia';
 
-export default defineNuxtPlugin((nuxtApp) => {
+export default defineNuxtPlugin(async (nuxtApp) => {
   const pinia = createPinia();
 
-  if (process.client) {
-    import('pinia-plugin-persistedstate').then(
-      ({ default: piniaPluginPersistedstate }) => {
-        pinia.use(piniaPluginPersistedstate);
-      }
+  if (typeof window !== 'undefined') {
+    const { default: piniaPluginPersistedstate } = await import(
+      'pinia-plugin-persistedstate'
     );
+    pinia.use(piniaPluginPersistedstate);
   }
 
   nuxtApp.vueApp.use(pinia);
