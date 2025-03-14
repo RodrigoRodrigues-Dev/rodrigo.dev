@@ -11,21 +11,18 @@
         <div
           v-for="(project, index) in projects"
           :key="index"
-          @mouseover="setMainImage(project.projectImage)"
+          @mouseover="setMainImage(project.imageUrl)"
           @mouseleave="resetMainImage()"
           class="projects__project-text-container"
         >
+          <a class="projects__project-text" @click="goToProject(project)">
+            {{ project.name }}
+          </a>
           <a
-            :href="project.projectLink"
-            target="_blank"
-            class="projects__project-text"
-            >{{ project.projectName }}</a
-          >
-          <a
-            :href="project.projectLink"
-            target="_blank"
             class="projects__project-text--bottom"
-            >{{ project.projectName }}
+            @click="goToProject(project)"
+          >
+            {{ project.name }}
             <svg
               viewBox="0 0 24 24"
               class="projects__arrow-work"
@@ -47,7 +44,7 @@
         <img
           v-for="(project, index) in projects"
           :key="index"
-          :src="project.projectImage"
+          :src="project.imageUrl"
           alt=""
           style="transform: translateY(100%)"
           class="projects__tooltip-card-image"
@@ -61,12 +58,16 @@
 
 <script setup>
 import axios from 'axios';
+import { useRouter } from 'vue-router';
 import { onMounted, ref } from 'vue';
+import { useProjectStore } from '~/stores/projectStore';
 import gsap from 'gsap';
 
+const projectStore = useProjectStore();
 const container = ref(null);
 const projects = ref([]);
 const tooltipImages = ref([]);
+const router = useRouter();
 
 const resetMainImage = () => {
   tooltipImages.value.forEach((tooltipImage) => {
@@ -78,6 +79,14 @@ const setMainImage = (image) => {
   tooltipImages.value.forEach((tooltipImage) => {
     tooltipImage.style.transform =
       tooltipImage.src === image ? `translateY(0%)` : `translateY(100%)`;
+  });
+};
+
+const goToProject = (item) => {
+  projectStore.setProjectProps(item);
+  router.push({
+    name: 'Projects-name',
+    params: { name: item.name }
   });
 };
 
