@@ -15,4 +15,7 @@ export default defineNuxtConfig({
     }
   },
   modules: ['@nuxt/icon'],
+  plugins: [
+    '~/plugins/pinia.js'
+  ]
 })
