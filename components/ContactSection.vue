@@ -2,6 +2,24 @@
   <div class="contact-section">
     <div class="contact-container">
       <h2 class="contact-title">Entre em contato</h2>
+      <div class="message__container">
+        <div
+          class="message__status message__status--sent"
+          :style="{
+            transform: isMessageSent ? 'translateX(0%)' : 'translateX(-100%)'
+          }"
+        >
+          E-Mail Enviado
+        </div>
+        <div
+          class="message__status message__status--not-sent"
+          :style="{
+            transform: isMessageNotSent ? 'translateX(0%)' : 'translateX(-100%)'
+          }"
+        >
+          E-Mail não enviado
+        </div>
+      </div>
       <div class="form-wrapper">
         <form @submit.prevent="sendEmail" class="contact-form">
           <div
@@ -108,6 +126,28 @@ watch(
   }
 );
 
+const isMessageSent = ref(false);
+const isMessageNotSent = ref(false);
+
+const messageSent = () => {
+  isMessageSent.value = true;
+
+  form.name = '';
+  form.email = '';
+  form.message = '';
+
+  setTimeout(() => {
+    isMessageSent.value = false;
+  }, 3000);
+};
+
+const messageNotSent = () => {
+  isMessageNotSent.value = true;
+  setTimeout(() => {
+    isMessageNotSent.value = false;
+  }, 3000);
+};
+
 const sendEmail = async () => {
   if (!emailValid.value || !nameValid.value || !messageValid.value) {
     return;
@@ -128,18 +168,15 @@ const sendEmail = async () => {
       }
     );
     if (response.status === 200) {
-      alert('Message sent successfully!');
-      form.name = '';
-      form.email = '';
-      form.message = '';
+      messageSent();
     } else {
-      alert('Failed to send message.');
+      messageNotSent();
     }
   } catch (error) {
     if (error.response && error.response.data && error.response.data.error) {
-      alert(`Failed to send message: ${error.response.data.error}`);
+      messageNotSent();
     } else {
-      alert('Failed to send message.');
+      messageNotSent();
     }
   }
 };
@@ -265,6 +302,32 @@ const sendEmail = async () => {
     width: 100%;
     height: 1px;
     background-color: $color-beige;
+  }
+
+  .message__container {
+    overflow: hidden;
+  }
+
+  @mixin status-badge($background-color) {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color-beige;
+    background-color: $background-color;
+    border-radius: 24px;
+    padding: 4px 16px;
+    width: fit-content;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .message__status {
+    &--sent {
+      @include status-badge($color-green);
+    }
+
+    &--not-sent {
+      @include status-badge($color-cinnabar);
+    }
   }
 }
 </style>
