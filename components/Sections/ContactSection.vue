@@ -72,7 +72,7 @@
           </div>
           <button type="submit">Enviar</button>
         </form>
-        <ThreeSpheres />
+        <SectionsThreeSpheres />
       </div>
     </div>
   </div>

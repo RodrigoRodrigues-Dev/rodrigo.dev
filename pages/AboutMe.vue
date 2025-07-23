@@ -1,7 +1,7 @@
 <template>
   <div class="about-me" :class="{ 'about-me--no-scroll': isLoading }">
     <div class="about-me__content-wrapper">
-      <Header class="about-me__header" />
+      <LayoutHeader class="about-me__header" />
       <h1 class="about-me__title">Sobre mim</h1>
       <div class="about-me__container">
         <div class="about-me__section about-me__section--first">
@@ -72,7 +72,7 @@
         </div>
       </div>
       <ContactSection class="about-me__contact-section" />
-      <Footer class="about-me__footer" />
+      <LayoutFooter class="about-me__footer" />
     </div>
     <div class="about-me__loading-text">Carregando...</div>
     <div class="about-me__overlay">

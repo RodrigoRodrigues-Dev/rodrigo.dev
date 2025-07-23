@@ -3,7 +3,7 @@
   <footer class="footer">
     <div class="footer__section footer__section--left">
       <p class="footer__edition">2025 © Edition</p>
-      <CurrentDateTime class="footer__datetime" />
+      <UICurrentDateTime class="footer__datetime" />
     </div>
     <div class="footer__section footer__section--right">
       <h4 class="footer__title">Socials</h4>

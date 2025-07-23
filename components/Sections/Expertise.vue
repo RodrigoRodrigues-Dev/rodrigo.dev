@@ -11,7 +11,7 @@
         >
       </h2>
       <div class="expertise__grid">
-        <ExpertiseCard
+        <UIExpertiseCard
           v-for="(card, index) in cards"
           :key="index"
           :icon="card.icon"
@@ -34,7 +34,6 @@
 import { onMounted } from 'vue';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import ExpertiseCard from './ExpertiseCard.vue';
 
 const title = 'Conhecimentos'.split('');
 const cards = [

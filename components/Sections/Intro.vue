@@ -34,7 +34,7 @@
       </span>
     </div>
     <div class="intro__scroll-indicator">
-      <span class="intro__scroll-text">Scroll Down</span>
+      <span class="intro__scroll-text">Role para baixo</span>
       <span class="intro__scroll-arrow">↓</span>
     </div>
   </section>
@@ -48,18 +48,18 @@ const titleFrontend = 'Frontend';
 const titleDeveloper = 'Developer';
 
 const tags = [
-  'Creative',
-  'Developer',
-  'Problem Solver',
-  'BEM Practitioner',
-  'Tech Innovator',
-  'Task Manager Developer',
-  'Performance Optimizer',
-  'Responsive Design Advocate',
-  'Web Accessibility Advocate',
-  'Component-Driven Developer',
-  'State Management Expert',
-  'Micro Frontends Enthusiast'
+  'Criativo',
+  'Desenvolvedor',
+  'Solucionador de Problemas',
+  'Praticante de BEM',
+  'Inovador Tecnológico',
+  'Desenvolvedor de Gerenciador de Tarefas',
+  'Otimizador de Performance',
+  'Defensor de Design Responsivo',
+  'Defensor de Acessibilidade Web',
+  'Desenvolvedor Orientado a Componentes',
+  'Especialista em Gerenciamento de Estado',
+  'Entusiasta de Micro Frontends'
 ];
 
 const tagsExtended = [...tags, ...tags];

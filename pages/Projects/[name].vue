@@ -70,7 +70,7 @@
     </section>
   </client-only>
   <!-- Componente de rodapé -->
-  <Footer />
+  <LayoutFooter />
 </template>
 
 <script setup>
