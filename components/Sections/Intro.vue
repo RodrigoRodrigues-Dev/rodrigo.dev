@@ -4,7 +4,7 @@
     <h1 class="intro__title">
       <span class="intro__title-row">
         <span
-          class="intro__letter"
+          class="intro__letter intro__letter--first"
           v-for="(letter, index) in titleFrontend"
           :key="index"
           >{{ letter }}</span
@@ -12,7 +12,7 @@
       </span>
       <span class="intro__title-row">
         <span
-          class="intro__letter"
+          class="intro__letter intro__letter--second"
           v-for="(letter, index) in titleDeveloper"
           :key="index"
           >{{ letter }}</span
@@ -157,6 +157,20 @@ onMounted(animateIntro);
     display: inline-block;
     font-family: 'Gunterz';
     font-weight: 900;
+
+    &--first {
+      &:nth-last-child(-n + 3) {
+        background-color: $color-slate-gray;
+        color: $color-black;
+      }
+    }
+
+    &--second {
+      &:nth-child(-n + 3) {
+        background-color: $color-slate-gray;
+        color: $color-black;
+      }
+    }
   }
 
   &__tags {
