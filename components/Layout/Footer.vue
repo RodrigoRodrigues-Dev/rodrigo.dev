@@ -32,7 +32,7 @@
 .footer {
   padding: 1rem 3rem;
   align-items: flex-end;
-  background-color: $color-grayish-lime-green;
+  background-color: $color-slate-gray;
   bottom: 0;
   display: flex;
   height: 10rem;

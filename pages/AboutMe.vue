@@ -22,7 +22,7 @@
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M0.75 32.2422C0.75 33.4141 1.29688 34 2.39062 34H5.95312C7.04688 34 7.59375 33.4141 7.59375 32.2422V20.4297H9.32812C10.6719 20.4297 12.0234 20.9375 13.3828 21.9531C14.7578 22.9531 15.7031 23.875 16.2188 24.7188L20.9531 32.6172C21.5 33.5391 22.2031 34 23.0625 34H27.1406C28.5938 34 28.8906 33.3281 28.0312 31.9844L22.875 23.8516C22.3906 23.1016 21.7656 22.2266 21 21.2266C20.2344 20.2266 19.1016 19.4453 17.6016 18.8828V18.8359C20.3672 18.3516 22.6484 17.3672 24.4453 15.8828C26.2422 14.3984 27.1406 12.4062 27.1406 9.90625C27.1406 6.54688 26.0312 4.125 23.8125 2.64062C21.5938 1.14062 18.0703 0.390625 13.2422 0.390625H2.39062C1.29688 0.390625 0.75 0.976562 0.75 2.14844V6.10001H8V6.10938H12.9141C15.3828 6.10938 17.25 6.36719 18.5156 6.88281C19.7969 7.38281 20.4375 8.47656 20.4375 10.1641C20.4375 11.7109 19.7734 12.8438 18.4453 13.5625C17.1328 14.2656 14.9141 14.6172 11.7891 14.6172H8V14.62H0.75V32.2422Z"
-              fill="$color-beige"
+              fill="$color-ice-gray"
             />
           </svg>
         </div>
@@ -156,7 +156,7 @@ watch(isLoading, (newValue) => {
 
 <style lang="scss" scoped>
 .about-me {
-  background-color: $color-salvia;
+  background-color: $color-sky-tint;
   width: 100%;
   height: 100vh;
 
@@ -171,7 +171,7 @@ watch(isLoading, (newValue) => {
   }
 
   &__header {
-    background-color: $color-mist;
+    background-color: $color-steel-blue;
   }
 
   &__title {
@@ -179,8 +179,8 @@ watch(isLoading, (newValue) => {
     font-size: 4vw;
     text-align: center;
     padding-top: 10%;
-    color: $color-beige;
-    background-color: $color-mist;
+    color: $color-ice-gray;
+    background-color: $color-steel-blue;
 
     @media (max-width: 1280px) {
       font-size: 7vw;
@@ -194,8 +194,8 @@ watch(isLoading, (newValue) => {
     font-size: 3vw;
     text-align: center;
     padding-top: 5%;
-    color: $color-beige;
-    background-color: $color-mist;
+    color: $color-ice-gray;
+    background-color: $color-steel-blue;
 
     @media (max-width: 1280px) {
       padding-top: 5rem;
@@ -210,14 +210,14 @@ watch(isLoading, (newValue) => {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $color-mist;
+    background-color: $color-steel-blue;
   }
 
   &__cards-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    background-color: $color-mist;
+    background-color: $color-steel-blue;
   }
 
   &__section {
@@ -228,7 +228,7 @@ watch(isLoading, (newValue) => {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: $color-mist;
+    background-color: $color-steel-blue;
 
     &--first {
       width: 80%;
@@ -262,8 +262,8 @@ watch(isLoading, (newValue) => {
     width: 80%;
     font-weight: 900;
     font-size: 1.5vw;
-    color: $color-beige;
-    background-color: $color-mist;
+    color: $color-ice-gray;
+    background-color: $color-steel-blue;
 
     @media (max-width: 1280px) {
       font-size: 1rem;
@@ -277,21 +277,21 @@ watch(isLoading, (newValue) => {
   &__card-bar {
     width: 100%;
     height: 1px;
-    background-color: $color-beige;
+    background-color: $color-ice-gray;
     margin-top: 1rem;
   }
 
   &__icon {
     width: 20%;
     height: 20%;
-    fill: $color-beige;
+    fill: $color-ice-gray;
     margin-left: 5rem;
   }
 
   &__ball {
     width: 200px;
     height: 200px;
-    background-color: $color-beige;
+    background-color: $color-ice-gray;
     border-radius: 50%;
     margin-bottom: 3rem;
 
@@ -310,7 +310,7 @@ watch(isLoading, (newValue) => {
       position: absolute;
       width: 100px;
       height: 100px;
-      background-color: $color-beige;
+      background-color: $color-ice-gray;
       border-radius: 50%;
       top: 25%;
       left: 35%;
@@ -321,7 +321,7 @@ watch(isLoading, (newValue) => {
       position: absolute;
       width: 100px;
       height: 100px;
-      background-color: $color-beige;
+      background-color: $color-ice-gray;
       border-radius: 50%;
       top: 25%;
       right: 35%;
@@ -360,8 +360,8 @@ watch(isLoading, (newValue) => {
     row-gap: 10rem;
     column-gap: 20rem;
     height: 100%;
-    background-color: $color-mist;
-    color: $color-beige;
+    background-color: $color-steel-blue;
+    color: $color-ice-gray;
     font-size: 1.6rem;
     justify-content: center;
 
@@ -387,7 +387,7 @@ watch(isLoading, (newValue) => {
     &-bar {
       width: 100%;
       height: 0.5px;
-      background-color: $color-beige;
+      background-color: $color-ice-gray;
       margin-top: 1rem;
     }
   }
@@ -401,7 +401,7 @@ watch(isLoading, (newValue) => {
     position: fixed;
     width: 5%;
     height: 100vh;
-    background-color: $color-mist;
+    background-color: $color-steel-blue;
 
     &--1 {
       left: 0;

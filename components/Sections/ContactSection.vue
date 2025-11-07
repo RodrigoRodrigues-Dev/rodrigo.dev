@@ -187,7 +187,7 @@ const sendEmail = async () => {
   padding: 6rem 0;
   margin-bottom: 6rem;
   border-radius: 0 0 3rem 3rem;
-  background-color: $color-mist;
+  background-color: $color-steel-blue;
 
   @media (max-width: 560px) {
     margin-bottom: 12rem;
@@ -196,7 +196,7 @@ const sendEmail = async () => {
   .contact-container {
     max-width: 1600px;
     margin: 0 auto;
-    border-top: 1px solid $color-beige;
+    border-top: 1px solid $color-ice-gray;
 
     @media (max-width: 1760px) {
       padding: 0 2rem;
@@ -206,7 +206,7 @@ const sendEmail = async () => {
   .contact-title {
     margin: 5rem 0 10rem;
     font-family: 'Gunterz';
-    color: $color-beige;
+    color: $color-ice-gray;
     text-align: center;
     font-size: 6vw;
     text-transform: uppercase;
@@ -240,29 +240,29 @@ const sendEmail = async () => {
       margin: 1rem 0;
 
       &__message-error {
-        color: $color-cinnabar;
+        color: $color-crimson;
         font-size: 1.2rem;
         margin-bottom: 0.5rem;
       }
 
       &--invalid-email {
         .input-bar {
-          background-color: $color-cinnabar;
+          background-color: $color-crimson;
         }
 
         input::placeholder {
-          color: $color-cinnabar;
+          color: $color-crimson;
         }
       }
 
       &--invalid {
         .input-bar {
-          background-color: $color-cinnabar;
+          background-color: $color-crimson;
         }
 
         input::placeholder,
         textarea::placeholder {
-          color: $color-cinnabar;
+          color: $color-crimson;
         }
       }
     }
@@ -287,7 +287,7 @@ const sendEmail = async () => {
       margin: 1rem 0 0 auto;
       width: 130px;
       padding: 1.2rem 2rem;
-      background-color: $color-beige;
+      background-color: $color-ice-gray;
       color: $color-white;
       border: none;
       border-radius: 1rem;
@@ -301,7 +301,7 @@ const sendEmail = async () => {
     margin: 0.5rem 0;
     width: 100%;
     height: 1px;
-    background-color: $color-beige;
+    background-color: $color-ice-gray;
   }
 
   .message__container {
@@ -312,7 +312,7 @@ const sendEmail = async () => {
     font-size: 1rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: $color-beige;
+    color: $color-ice-gray;
     background-color: $background-color;
     border-radius: 24px;
     padding: 4px 16px;
@@ -322,11 +322,11 @@ const sendEmail = async () => {
 
   .message__status {
     &--sent {
-      @include status-badge($color-green);
+      @include status-badge($color-forest-green);
     }
 
     &--not-sent {
-      @include status-badge($color-cinnabar);
+      @include status-badge($color-crimson);
     }
   }
 }

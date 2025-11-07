@@ -3,53 +3,53 @@
 @use 'colors';
 
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
 
-    ::-webkit-scrollbar {
-        width: 8px;
-        height: 10px;
-    }
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+  }
 
-    ::-webkit-scrollbar-track {
-        background: transparent;
-        border-radius: 10px;
-    }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
 
-    ::-webkit-scrollbar-thumb {
-        background: $color-beige;
-        border-radius: 10px;
-    }
+  ::-webkit-scrollbar-thumb {
+    background: $color-ice-gray;
+    border-radius: 10px;
+  }
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: $color-davys-grey;
-    }
+  ::-webkit-scrollbar-thumb:hover {
+    background: $color-charcoal;
+  }
 }
 
 body {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
 
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 
-    background-color: $color-mist;
+  background-color: $color-steel-blue;
 
-    @media (max-width: 1761px) {
-        font-size: 14px;
-    }
+  @media (max-width: 1761px) {
+    font-size: 14px;
+  }
 
-    ::selection {
-        background-color: $color-grayish-lime-green;
-        color: $color-black;
-    }
+  ::selection {
+    background-color: $color-slate-gray;
+    color: $color-black;
+  }
 
-    ::-webkit-selection {
-        background-color: $color-grayish-lime-green;
-        color: $color-black;
-    }
+  ::-webkit-selection {
+    background-color: $color-slate-gray;
+    color: $color-black;
+  }
 }
 
 section {
-    background-color: $color-mist;
+  background-color: $color-steel-blue;
 }

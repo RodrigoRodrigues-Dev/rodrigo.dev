@@ -29,11 +29,11 @@
               style="width: 2rem; height: 2rem"
             >
               <path
-                fill="#E2D4B7"
+                fill="#eff2f5"
                 d="M3.2 23.3.7 20.8 17.5 4h-15V.5h21v21H20v-15L3.2 23.3Z"
               ></path>
               <path
-                fill="#E2D4B7"
+                fill="#eff2f5"
                 d="M3.2 24 0 20.8 16.3 4.5H2V0h22v22h-4.5V7.7L3.2 24ZM20 6.5v15h3.5V.5h-21V4h15L.7 20.8l2.5 2.5L20 6.5Z"
               ></path>
             </svg>
@@ -196,7 +196,7 @@ onMounted(async () => {
     transform: rotate(-90deg);
     font-family: 'Gunterz';
     font-size: 3.5rem;
-    color: $color-beige;
+    color: $color-ice-gray;
     text-transform: uppercase;
 
     @media (max-width: 1180px) {
@@ -233,7 +233,7 @@ onMounted(async () => {
   &__project-text,
   &__project-text--bottom {
     text-decoration: none;
-    color: $color-beige;
+    color: $color-ice-gray;
     font-size: 3.5rem;
     margin: 10px;
     position: absolute;
@@ -300,7 +300,7 @@ onMounted(async () => {
   &__background-ball {
     width: 750px;
     height: 800px;
-    background-color: $color-beige;
+    background-color: $color-ice-gray;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -331,7 +331,7 @@ onMounted(async () => {
   height: 120px;
   width: 120px;
   border-radius: 100%;
-  background-color: $color-beige;
+  background-color: $color-ice-gray;
 }
 
 .projects__ball--1 {

@@ -247,7 +247,7 @@ function animateProjectDetails() {
     top: 2%;
     left: 1%;
     font-size: 3rem;
-    color: $color-beige;
+    color: $color-ice-gray;
 
     @media (max-width: 1720px) {
       display: none;

@@ -17,7 +17,7 @@ const threeCanvas = ref(null);
 
 const initThreeJS = () => {
   const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0xa1a499);
+  scene.background = new THREE.Color(0x8a909e);
   const camera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
@@ -29,7 +29,7 @@ const initThreeJS = () => {
   threeCanvas.value.appendChild(renderer.domElement);
 
   const geometry = new THREE.BoxGeometry();
-  const material = new THREE.MeshBasicMaterial({ color: 0xcadbc8 });
+  const material = new THREE.MeshBasicMaterial({ color: 0xc8cbdb });
   const cube = new THREE.Mesh(geometry, material);
   scene.add(cube);
 

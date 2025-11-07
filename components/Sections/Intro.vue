@@ -134,7 +134,7 @@ onMounted(animateIntro);
   &__title {
     display: flex;
     flex-direction: column;
-    color: $color-beige;
+    color: $color-ice-gray;
     text-transform: uppercase;
     text-align: center;
     @include responsive-font(10rem, 8rem, 6rem, 4rem);
@@ -172,7 +172,7 @@ onMounted(animateIntro);
     align-items: center;
     overflow: hidden;
     font-size: 1.3rem;
-    color: $color-beige;
+    color: $color-ice-gray;
     scrollbar-width: none;
     -ms-overflow-style: none;
   }
@@ -205,7 +205,7 @@ onMounted(animateIntro);
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: $color-beige;
+    color: $color-ice-gray;
     font-size: 1.5rem;
 
     @media (max-width: 960px) {

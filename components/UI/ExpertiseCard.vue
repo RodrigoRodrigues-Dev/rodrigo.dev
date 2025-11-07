@@ -22,8 +22,8 @@ const props = defineProps({
 <style scoped lang="scss">
 .expertise__card {
   z-index: 999;
-  color: $color-beige;
-  border: 1px solid $color-beige;
+  color: $color-ice-gray;
+  border: 1px solid $color-ice-gray;
   padding: 3rem 5rem;
 
   &-header {

@@ -130,7 +130,7 @@ onMounted(() => {
   &__title {
     margin-bottom: 7rem;
     font-size: 4.5rem;
-    color: $color-beige;
+    color: $color-ice-gray;
     height: 1.075em;
     overflow-y: hidden;
 
@@ -164,7 +164,7 @@ onMounted(() => {
   &__background-ball {
     width: 750px;
     height: 800px;
-    background-color: $color-beige;
+    background-color: $color-ice-gray;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -187,7 +187,7 @@ onMounted(() => {
 
 .about-me {
   text-align: right;
-  color: $color-beige;
+  color: $color-ice-gray;
   margin: 5rem 10rem 5rem auto;
   width: 260px;
 
@@ -212,7 +212,7 @@ onMounted(() => {
 
   &__bar {
     transition: all ease 0.7s;
-    background-color: $color-beige;
+    background-color: $color-ice-gray;
     width: 100%;
     height: 5px;
   }

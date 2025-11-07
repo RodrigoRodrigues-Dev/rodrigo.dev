@@ -51,6 +51,6 @@ onMounted(() => {
 <style lang="scss" scoped>
 p {
   font-size: 1.2rem;
-  color: $color-very-dark-gray;
+  color: $color-graphite;
 }
 </style>
