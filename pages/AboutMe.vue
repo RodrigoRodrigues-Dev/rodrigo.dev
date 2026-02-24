@@ -1,5 +1,5 @@
 <template>
-  <div class="about-me" :class="{ 'about-me--no-scroll': isLoading }">
+  <section class="about-me" :class="{ 'about-me--no-scroll': isLoading }">
     <div class="about-me__content-wrapper">
       <LayoutHeader class="about-me__header" />
       <h1 class="about-me__title">Sobre mim</h1>
@@ -83,78 +83,93 @@
         :class="'about-me__block--' + n"
       ></div>
     </div>
-  </div>
+  </section>
+  <UICustomCursor />
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeMount, watch } from 'vue';
-import { TweenMax, Power1, Expo } from 'gsap';
+import { ref, onMounted, onBeforeMount } from 'vue';
+import { gsap } from 'gsap';
 
 const isLoading = ref(true);
 
-if (
-  typeof window !== 'undefined' &&
-  window.history &&
-  'scrollRestoration' in window.history
-) {
-  window.history.scrollRestoration = 'manual';
-}
+const initScrollRestoration = () => {
+  if (typeof window !== 'undefined' && window.history && 'scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+  }
+};
+
+const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
+
+const disableScroll = () => {
+  document.body.classList.add('no-scroll');
+  document.documentElement.classList.add('no-scroll');
+};
+
+const enableScroll = () => {
+  document.body.classList.remove('no-scroll');
+  document.documentElement.classList.remove('no-scroll');
+};
+
+const setupLoadingAnimations = () => {
+  // Animate overlay blocks
+  gsap.from('.about-me__block', {
+    width: '0',
+    duration: 0.8,
+    ease: 'Power1.easeIn',
+    delay: 2,
+    stagger: 0.04
+  });
+
+  // Fade out loading text
+  gsap.to('.about-me__loading-text', {
+    x: 2,
+    opacity: 0,
+    duration: 1,
+    ease: 'expo.inOut',
+    delay: 1.5
+  });
+
+  // Fade in content elements
+  gsap.from(
+    '.about-me__header, .about-me__contact-section, .about-me__footer, .about-me__title, .about-me__text, .about-me__section, .about-me__container',
+    {
+      opacity: 0,
+      y: 30,
+      duration: 2,
+      ease: 'expo.inOut',
+      delay: 3,
+      stagger: 0.06
+    }
+  );
+};
+
+const completeLoading = () => {
+  setTimeout(() => {
+    isLoading.value = false;
+    enableScroll();
+  }, 4500);
+};
 
 onBeforeMount(() => {
-  window.scrollTo(0, 0);
+  initScrollRestoration();
+  scrollToTop();
+  disableScroll();
 });
 
 onMounted(() => {
   setTimeout(() => {
-    window.scrollTo(0, 0);
+    scrollToTop();
   }, 10);
 
-  TweenMax.staggerFrom(
-    '.about-me__block',
-    0.8,
-    {
-      width: '0',
-      ease: Power1.easeIn,
-      delay: 2
-    },
-    0.04
-  );
-
-  TweenMax.to('.about-me__loading-text', 1, {
-    x: 2,
-    opacity: 0,
-    ease: Expo.easeInOut,
-    delay: 1.5
-  });
-
-  TweenMax.staggerFrom(
-    '.about-me__header, .about-me__contact-section, .about-me__footer, .about-me__title, .about-me__text, .about-me__section, .about-me__container',
-    2,
-    {
-      opacity: 0,
-      y: 30,
-      ease: Expo.easeInOut,
-      delay: 3
-    },
-    0.06
-  );
-
-  setTimeout(() => {
-    isLoading.value = false;
-    document.body.classList.remove('no-scroll');
-  }, 4500);
-
-  document.body.classList.add('no-scroll');
-});
-
-watch(isLoading, (newValue) => {
-  if (!newValue) {
-    window.scrollTo(0, 0);
-  }
+  setupLoadingAnimations();
+  completeLoading();
 });
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .about-me {
   background-color: $color-sky-tint;
   width: 100%;
@@ -168,10 +183,6 @@ watch(isLoading, (newValue) => {
     position: absolute;
     width: 100% !important;
     z-index: 2;
-  }
-
-  &__header {
-    background-color: $color-steel-blue;
   }
 
   &__title {
@@ -465,10 +476,14 @@ watch(isLoading, (newValue) => {
     }
   }
 }
-</style>
 
-<style lang="scss">
 .no-scroll {
   overflow: hidden;
 }
+</style>
+
+<style lang="scss" scoped>
+  .about-me__header {
+    background-color: $color-steel-blue;
+  }
 </style>

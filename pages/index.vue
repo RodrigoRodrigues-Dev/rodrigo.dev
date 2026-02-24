@@ -1,10 +1,10 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
+  <LayoutScrollProgressBar />
+  <UICustomCursor />
   <LayoutHeader />
-  <SectionsIntro />
-  <SectionsExpertise />
-  <SectionsProjects />
-  <SectionsDevServices />
-  <SectionsContactSection />
+  <SectionIntro />
+  <SectionSkills />
+  <SectionProjects />
+  <SectionContact />
   <LayoutFooter />
 </template>
