@@ -1,8 +1,7 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <footer class="footer">
     <div class="footer__section footer__section--left">
-      <p class="footer__edition">2025 © Edition</p>
+      <p class="footer__edition">{{ year }} © Edition</p>
       <UICurrentDateTime class="footer__datetime" />
     </div>
     <div class="footer__section footer__section--right">
@@ -28,27 +27,36 @@
   </footer>
 </template>
 
+<script setup>
+const year = new Date().getFullYear();
+</script>
+
 <style lang="scss" scoped>
 .footer {
-  padding: 1rem 3rem;
-  align-items: flex-end;
-  background-color: $color-slate-gray;
-  bottom: 0;
-  display: flex;
-  height: 10rem;
-  justify-content: space-between;
-  left: 0;
   position: fixed;
-  width: 100%;
+  bottom: 0;
+  left: 0;
   z-index: -1;
+
+  width: 100%;
+  height: 10rem;
+  padding: 1.5rem 3rem;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  
+  background-color: var(--color-gunmetal);
   color: $color-white;
+  transition: all 0.5s ease;
 
   @media (max-width: 560px) {
+    height: 14rem;
+
     flex-direction: column;
     justify-content: end;
-    gap: 1rem;
     align-items: start;
-    height: 14rem;
+    gap: 1rem; 
   }
 
   &__section {
@@ -67,21 +75,22 @@
   }
 
   &__datetime {
-    color: $color-white;
     font-size: 1.1rem;
     font-weight: 600;
+    color: $color-white;
   }
 
   &__links {
     display: flex;
     list-style: none;
     gap: 1rem;
+
     font-size: 1.1rem;
   }
 
   &__link {
-    cursor: pointer;
     font-weight: 600;
+    cursor: pointer;
 
     &:hover {
       .footer__bar {
@@ -96,10 +105,11 @@
   }
 
   &__bar {
-    transition: all ease 0.7s;
     width: 0;
     height: 2px;
+    
     background-color: $color-white;
+    transition: all ease 0.7s;
   }
 }
 </style>
