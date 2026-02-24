@@ -7,41 +7,56 @@ import { ref, onMounted } from 'vue';
 
 const currentDateTime = ref('');
 
-const updateDateTime = () => {
-  const now = new Date();
-  const days = [
-    'Domingo',
-    'Segunda-feira',
-    'Terça-feira',
-    'Quarta-feira',
-    'Quinta-feira',
-    'Sexta-feira',
-    'Sábado'
-  ];
-  const months = [
-    'Janeiro',
-    'Fevereiro',
-    'Março',
-    'Abril',
-    'Maio',
-    'Junho',
-    'Julho',
-    'Agosto',
-    'Setembro',
-    'Outubro',
-    'Novembro',
-    'Dezembro'
-  ];
+// ==================== DATE AND TIME CONSTANTS ====================
+const DAYS = [
+  'Domingo',
+  'Segunda-feira',
+  'Terça-feira',
+  'Quarta-feira',
+  'Quinta-feira',
+  'Sexta-feira',
+  'Sábado'
+];
 
-  const day = days[now.getDay()];
+const MONTHS = [
+  'Janeiro',
+  'Fevereiro',
+  'Março',
+  'Abril',
+  'Maio',
+  'Junho',
+  'Julho',
+  'Agosto',
+  'Setembro',
+  'Outubro',
+  'Novembro',
+  'Dezembro'
+];
+
+// ==================== UTILITIES ====================
+/**
+ * Format the current date and time
+ * @returns {string} Formatted date and time string
+ */
+const formatDateTime = () => {
+  const now = new Date();
+  const day = DAYS[now.getDay()];
   const date = now.getDate();
-  const month = months[now.getMonth()];
+  const month = MONTHS[now.getMonth()];
   const hours = now.getHours().toString().padStart(2, '0');
   const minutes = now.getMinutes().toString().padStart(2, '0');
 
-  currentDateTime.value = `${day}, ${date} ${month}, ${hours}:${minutes}`;
+  return `${day}, ${date} ${month}, ${hours}:${minutes}`;
 };
 
+/**
+ * Update the current date and time
+ */
+const updateDateTime = () => {
+  currentDateTime.value = formatDateTime();
+};
+
+// ==================== LIFECYCLE ====================
 onMounted(() => {
   updateDateTime();
   setInterval(updateDateTime, 60000);
