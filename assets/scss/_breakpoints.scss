@@ -1,0 +1,83 @@
+// Breakpoints
+$bp-xl: 1760px;
+$bp-lg: 1540px;
+$bp-md: 1280px;
+$bp-sm: 960px;
+$bp-xs: 760px;
+$bp-tiny: 520px;
+
+// Font sizes
+$size-large: 10rem;
+$size-medium: 8rem;
+$size-small: 6rem;
+$size-xsmall: 4rem;
+
+// Spacing
+$spacing-xs: 0.5rem;
+$spacing-sm: 1rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Transitions
+$transition-fast: 0.3s;
+$transition-base: 0.5s ease;
+$transition-slow: 0.6s;
+$transition-cubic: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+// Mixins
+
+/// Media query para tablets e acima
+@mixin tablet-up {
+  @media (min-width: calc(#{$bp-sm} + 1px)) {
+    @content;
+  }
+}
+
+/// Media query para desktop
+@mixin desktop {
+  @media (min-width: calc(#{$bp-md} + 1px)) {
+    @content;
+  }
+}
+
+/// Media query responsivo para tablets e abaixo
+@mixin tablet-down {
+  @media (max-width: $bp-sm) {
+    @content;
+  }
+}
+
+/// Media query responsivo para mobile
+@mixin mobile {
+  @media (max-width: $bp-xs) {
+    @content;
+  }
+}
+
+/// Media query para breakpoint customizado
+@mixin breakpoint($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+/// Flex center
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/// Posição absoluta fill
+@mixin absolute-fill {
+  position: absolute;
+  inset: 0;
+}
+
+/// Truncar texto em 1 linha
+@mixin text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
