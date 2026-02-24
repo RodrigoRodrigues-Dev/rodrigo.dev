@@ -5,7 +5,10 @@ $color-white: #ffffff;            // White
 $color-sky-tint: #92B0D8;         // Azul claro acinzentado (ex Salvia)
 $color-ice-gray: #eff2f5;         // Cinza muito claro (ex Beige)
 $color-steel-blue: #5C80B5;       // Azul médio frio (ex Mist)
+$color-mist-blue: #6488BD;        // Azul claro suave (ex Misty Blue)
 $color-slate-gray: #4E6281;       // Azul acinzentado escuro (ex Grayish Lime Green)
+$color-deep-slate-blue: #3E5069;   // Azul ardósia profundo (azul acinzentado escuro)
+$color-gunmetal: #3B414B;        // Azul muito escuro acinzentado (ex Dark Slate Gray)
 
 // Dark Neutrals
 $color-charcoal: #555555;         // Cinza escuro médio (ex Davy's Grey)
@@ -20,3 +23,31 @@ $color-forest-green: #568A4D;     // Verde médio natural
 // Black
 $color-black: #000000;            // Preto puro
 $color-obsidian: #111111;         // Preto suave (ligeiramente acinzentado)
+
+:root {
+  /* Base Colors */
+
+  /* Light Neutrals */
+  --color-white: #ffffff;
+  --color-sky-tint: #92B0D8;
+  --color-ice-gray: #eff2f5;
+  --color-steel-blue: #5C80B5;
+  --color-mist-blue: #6488BD;
+  --color-slate-gray: #4E6281;
+  --color-deep-slate-blue: #3E5069;
+  --color-gunmetal: #5b5e65;
+
+  /* Dark Neutrals */
+  --color-charcoal: #555555;
+  --color-graphite: #363636;
+
+  /* Red */
+  --color-crimson: #D44848;
+
+  /* Green */
+  --color-forest-green: #568A4D;
+
+  /* Black */
+  --color-black: #000000;
+  --color-obsidian: #111111;
+}
