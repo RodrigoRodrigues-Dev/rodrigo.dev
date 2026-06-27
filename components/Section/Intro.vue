@@ -2,12 +2,20 @@
   <section class="intro">
     <h1 class="intro__title">
       <span class="intro__title-row">
-        <span class="intro__letter intro__letter--first" v-for="(letter, index) in titleFrontend" :key="index">{{ letter
-          }}</span>
+        <span
+          class="intro__letter intro__letter--first"
+          v-for="(letter, index) in titleFrontend"
+          :key="index"
+          >{{ letter }}</span
+        >
       </span>
       <span class="intro__title-row">
-        <span class="intro__letter intro__letter--second" v-for="(letter, index) in titleDeveloper" :key="index">{{
-          letter }}</span>
+        <span
+          class="intro__letter intro__letter--second"
+          v-for="(letter, index) in titleDeveloper"
+          :key="index"
+          >{{ letter }}</span
+        >
       </span>
     </h1>
     <div class="intro__tags">
@@ -185,7 +193,7 @@ onMounted(setupAnimations);
 
     display: flex;
     align-items: center;
-    
+
     font-size: 1rem;
     color: $color-ice-gray;
 
@@ -202,18 +210,18 @@ onMounted(setupAnimations);
     width: 2px;
     height: 100px;
 
-    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 0%, transparent 100%);
   }
 
   &__item {
     white-space: nowrap;
     transform: translateX(-1800px);
   }
-  
+
   &__icon {
     display: inline-block;
     padding: 0 3rem;
-    
+
     user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;
@@ -239,7 +247,7 @@ onMounted(setupAnimations);
     margin-bottom: 1rem;
     font-size: 0.9rem;
 
-    &>span {
+    & > span {
       animation: wave 2s ease-in-out infinite;
 
       &:nth-child(1) {
@@ -270,7 +278,6 @@ onMounted(setupAnimations);
 }
 
 @keyframes wave {
-
   0%,
   100% {
     transform: translateY(0);

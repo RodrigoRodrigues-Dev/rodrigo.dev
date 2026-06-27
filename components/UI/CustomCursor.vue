@@ -15,14 +15,7 @@
 </template>
 
 <script setup>
-const {
-  dotX,
-  dotY,
-  circleX,
-  circleY,
-  isHovering,
-  isHoverDelayed
-} = useCustomCursor();
+const { dotX, dotY, circleX, circleY, isHovering, isHoverDelayed } = useCustomCursor();
 </script>
 
 <style scoped lang="scss">

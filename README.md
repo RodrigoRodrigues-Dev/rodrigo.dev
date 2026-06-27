@@ -59,24 +59,30 @@ cd rodrigo.dev
 ```sh
 npm install
 ```
+
 <br>
 
 # 🚀 Uso
+
 Para iniciar a aplicação em modo de desenvolvimento, execute:
 
 ```sh
 npm run dev
 ```
+
 Para construir o projeto para produção, utilize:
 
 ```sh
 npm run build
 ```
+
 <br>
 
 ## 📃 Licença
+
 Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 <br>
 
 ## ☎️ Contato
+
 Desenvolvido por [Rodrigo Rodrigues](https://github.com/RodrigoRodrigues-Dev). Entre em contato por 📧 [rodrigorodriguesdevcontato@gmail.com](mailto:rodrigorodriguesdevcontato@gmail.com)

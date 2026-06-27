@@ -6,11 +6,10 @@
       <div class="about-me__container">
         <div class="about-me__section about-me__section--first">
           <p class="about-me__text about-me__text--first">
-            Olá, meu nome é Rodrigo e sou um desenvolvedor apaixonado por
-            transformar ideias em experiências digitais marcantes. Sou formado
-            em Análise e Desenvolvimento de Sistemas, o que ampliou minha visão
-            sobre engenharia de software, metodologias ágeis e a importância de
-            um planejamento bem estruturado em cada projeto.
+            Olá, meu nome é Rodrigo e sou um desenvolvedor apaixonado por transformar ideias em
+            experiências digitais marcantes. Sou formado em Análise e Desenvolvimento de Sistemas, o
+            que ampliou minha visão sobre engenharia de software, metodologias ágeis e a importância
+            de um planejamento bem estruturado em cada projeto.
           </p>
           <svg
             class="about-me__icon"
@@ -29,13 +28,12 @@
         <div class="about-me__section about-me__section--second">
           <div class="about-me__ball"></div>
           <p class="about-me__text">
-            Minha jornada no desenvolvimento começou com a curiosidade de
-            entender como a tecnologia pode melhorar o dia a dia das pessoas, e
-            hoje me especializo em ferramentas como NodeJS, VueJS, Nuxt, JQuery,
-            JavaScript, TypeScript, HTML, CSS, SASS, Bootstrap (inclusive
-            BootStrap 5), LESS, Gulp, Grunt, Parcel, Babel e Git. Esse
-            conhecimento diversificado me permite abordar projetos de forma
-            completa e integrada, sempre focando na excelência e na inovação.
+            Minha jornada no desenvolvimento começou com a curiosidade de entender como a tecnologia
+            pode melhorar o dia a dia das pessoas, e hoje me especializo em ferramentas como NodeJS,
+            VueJS, Nuxt, JQuery, JavaScript, TypeScript, HTML, CSS, SASS, Bootstrap (inclusive
+            BootStrap 5), LESS, Gulp, Grunt, Parcel, Babel e Git. Esse conhecimento diversificado me
+            permite abordar projetos de forma completa e integrada, sempre focando na excelência e
+            na inovação.
           </p>
         </div>
       </div>
@@ -43,30 +41,21 @@
       <div class="about-me__cards-container">
         <div class="about-me__cards">
           <div class="about-me__card">
-            <p>
-              Desenvolvendo aplicações web de alta performance e escaláveis.
-            </p>
+            <p>Desenvolvendo aplicações web de alta performance e escaláveis.</p>
             <div class="about-me__card-bar"></div>
           </div>
           <div class="about-me__card">
             <p>
-              Projetando interfaces interativas e responsivas para melhor
-              experiência do usuário.
+              Projetando interfaces interativas e responsivas para melhor experiência do usuário.
             </p>
             <div class="about-me__card-bar"></div>
           </div>
           <div class="about-me__card">
-            <p>
-              Otimizando a usabilidade e acessibilidade com as melhores práticas
-              de UI/UX.
-            </p>
+            <p>Otimizando a usabilidade e acessibilidade com as melhores práticas de UI/UX.</p>
             <div class="about-me__card-bar"></div>
           </div>
           <div class="about-me__card">
-            <p>
-              Utilizando metodologias ágeis para entregar projetos eficientes e
-              inovadores.
-            </p>
+            <p>Utilizando metodologias ágeis para entregar projetos eficientes e inovadores.</p>
             <div class="about-me__card-bar"></div>
           </div>
         </div>
@@ -76,12 +65,7 @@
     </div>
     <div class="about-me__loading-text">Carregando...</div>
     <div class="about-me__overlay">
-      <div
-        class="about-me__block"
-        v-for="n in 20"
-        :key="n"
-        :class="'about-me__block--' + n"
-      ></div>
+      <div class="about-me__block" v-for="n in 20" :key="n" :class="'about-me__block--' + n"></div>
     </div>
   </section>
   <UICustomCursor />
@@ -483,7 +467,7 @@ onMounted(() => {
 </style>
 
 <style lang="scss" scoped>
-  .about-me__header {
-    background-color: $color-steel-blue;
-  }
+.about-me__header {
+  background-color: $color-steel-blue;
+}
 </style>

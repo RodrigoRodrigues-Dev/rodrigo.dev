@@ -4,7 +4,12 @@
       <h2 class="projects__title">003 / Projetos</h2>
     </div>
     <div class="projects__grid">
-      <a class="projects__card" v-for="project in projects" :key="project.title" @click="navigateToProject(project)">
+      <a
+        class="projects__card"
+        v-for="project in projects"
+        :key="project.title"
+        @click="navigateToProject(project)"
+      >
         <div class="projects__header">
           <span>{{ project.year }}</span>
           <Icon class="projects__icon" name="material-symbols:arrow-outward" />
@@ -55,9 +60,7 @@ const animationsMap = new Map();
 // ==================== API ====================
 const fetchProjects = async () => {
   try {
-    const response = await axios.get(
-      'https://110cbe32dcdc6022.mokky.dev/projects'
-    );
+    const response = await axios.get('https://110cbe32dcdc6022.mokky.dev/projects');
     projects.value = response.data;
   } catch (error) {
     console.error('Error fetching projects:', error);
@@ -112,7 +115,7 @@ const handleCardMouseLeave = (event) => {
 
 const setupCardAnimations = () => {
   const cards = document.querySelectorAll('.projects__card');
-  cards.forEach(card => {
+  cards.forEach((card) => {
     card.addEventListener('mouseenter', handleCardMouseEnter);
     card.addEventListener('mouseleave', handleCardMouseLeave);
   });
@@ -219,15 +222,15 @@ onMounted(async () => {
     @media (min-width: 1091px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
 
-      &>*:last-child {
+      & > *:last-child {
         grid-column: span 1;
       }
 
-      &>*:last-child:nth-child(3n + 1) {
+      & > *:last-child:nth-child(3n + 1) {
         grid-column: span 3;
       }
 
-      &>*:last-child:nth-child(3n + 2) {
+      & > *:last-child:nth-child(3n + 2) {
         grid-column: span 2;
       }
     }

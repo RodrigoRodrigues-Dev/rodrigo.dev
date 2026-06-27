@@ -74,7 +74,7 @@ onMounted(() => {
 <style scoped>
 .container {
   overflow: hidden;
-  
+
   width: 100%;
   height: 600px;
   border-radius: 5rem 0 5rem 0;

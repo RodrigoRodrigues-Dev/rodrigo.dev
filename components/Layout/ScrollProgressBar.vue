@@ -39,7 +39,10 @@ const calculateScrollProgress = () => {
  */
 const getColorForProgress = (scrollProgress) => {
   for (let i = 0; i < PROGRESS_COLORS.length - 1; i++) {
-    if (scrollProgress >= PROGRESS_COLORS[i].threshold && scrollProgress < PROGRESS_COLORS[i + 1].threshold) {
+    if (
+      scrollProgress >= PROGRESS_COLORS[i].threshold &&
+      scrollProgress < PROGRESS_COLORS[i + 1].threshold
+    ) {
       return PROGRESS_COLORS[i].color;
     }
   }

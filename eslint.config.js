@@ -4,9 +4,8 @@ import pluginVue from 'eslint-plugin-vue';
 import eslintConfigPrettier from 'eslint-config-prettier';
 import pluginPrettier from 'eslint-plugin-prettier';
 
-/** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ['**/*.{js,mjs,cjs,vue}'] },
+  { files: ['**/*.{js,mjs,cjs,ts,vue}'] },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...pluginVue.configs['flat/essential'],
@@ -16,13 +15,7 @@ export default [
     },
     rules: {
       'prettier/prettier': 'error'
-    },
-    settings: {
-      react: {
-        version: 'detect'
-      }
     }
   },
-  eslintConfigPrettier,
-  { ignores: ['.nuxt/**'] }
+  eslintConfigPrettier
 ];

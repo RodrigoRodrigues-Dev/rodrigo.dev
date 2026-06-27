@@ -8,18 +8,13 @@
       <h4 class="footer__title">Socials</h4>
       <ul class="footer__links">
         <li class="footer__link">
-          <a
-            href="https://www.linkedin.com/in/rodrigo-rodrigues-dev/"
-            target="_blank"
-          >
+          <a href="https://www.linkedin.com/in/rodrigo-rodrigues-dev/" target="_blank">
             Linkedin
           </a>
           <div class="footer__bar"></div>
         </li>
         <li class="footer__link">
-          <a href="https://github.com/RodrigoRodrigues-Dev" target="_blank">
-            GitHub
-          </a>
+          <a href="https://github.com/RodrigoRodrigues-Dev" target="_blank"> GitHub </a>
           <div class="footer__bar"></div>
         </li>
       </ul>
@@ -45,7 +40,7 @@ const year = new Date().getFullYear();
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  
+
   background-color: var(--color-gunmetal);
   color: $color-white;
   transition: all 0.5s ease;
@@ -56,7 +51,7 @@ const year = new Date().getFullYear();
     flex-direction: column;
     justify-content: end;
     align-items: start;
-    gap: 1rem; 
+    gap: 1rem;
   }
 
   &__section {
@@ -107,7 +102,7 @@ const year = new Date().getFullYear();
   &__bar {
     width: 0;
     height: 2px;
-    
+
     background-color: $color-white;
     transition: all ease 0.7s;
   }

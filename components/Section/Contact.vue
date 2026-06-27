@@ -8,47 +8,63 @@
       <h2 class="contact__title">Entre em contato</h2>
 
       <div class="contact__messages">
-        <div class="contact__status contact__status--sent" :style="{
-          transform: isMessageSent ? 'translateX(0%)' : 'translateX(-100%)'
-        }">
+        <div
+          class="contact__status contact__status--sent"
+          :style="{
+            transform: isMessageSent ? 'translateX(0%)' : 'translateX(-100%)'
+          }"
+        >
           E-Mail Enviado
         </div>
 
-        <div class="contact__status contact__status--not-sent" :style="{
-          transform: isMessageNotSent ? 'translateX(0%)' : 'translateX(-100%)'
-        }">
+        <div
+          class="contact__status contact__status--not-sent"
+          :style="{
+            transform: isMessageNotSent ? 'translateX(0%)' : 'translateX(-100%)'
+          }"
+        >
           E-Mail não enviado
         </div>
       </div>
 
       <div class="contact__form-wrapper">
         <form @submit.prevent="sendEmail" class="contact__form">
-          <div :class="[
-            'contact__group',
-            { 'contact__group--invalid': !nameValid }
-          ]">
+          <div :class="['contact__group', { 'contact__group--invalid': !nameValid }]">
             <span v-if="!nameValid" class="contact__error">Nome inválido</span>
-            <input class="contact__input" placeholder="Seu Nome *" type="text" id="name" v-model="form.name" required />
+            <input
+              class="contact__input"
+              placeholder="Seu Nome *"
+              type="text"
+              id="name"
+              v-model="form.name"
+              required
+            />
             <div class="contact__bar"></div>
           </div>
 
-          <div :class="[
-            'contact__group',
-            { 'contact__group--invalid': !emailValid }
-          ]">
+          <div :class="['contact__group', { 'contact__group--invalid': !emailValid }]">
             <span v-if="!emailValid" class="contact__error">Email inválido</span>
-            <input class="contact__input" placeholder="Seu Email *" type="email" id="email" v-model="form.email"
-              required />
+            <input
+              class="contact__input"
+              placeholder="Seu Email *"
+              type="email"
+              id="email"
+              v-model="form.email"
+              required
+            />
             <div class="contact__bar"></div>
           </div>
 
-          <div :class="[
-            'contact__group',
-            { 'contact__group--invalid': !messageValid }
-          ]">
+          <div :class="['contact__group', { 'contact__group--invalid': !messageValid }]">
             <span v-if="!messageValid" class="contact__error">Mensagem inválida</span>
-            <textarea class="contact__textarea" placeholder="Sua Mensagem *" id="message" v-model="form.message"
-              rows="5" required></textarea>
+            <textarea
+              class="contact__textarea"
+              placeholder="Sua Mensagem *"
+              id="message"
+              v-model="form.message"
+              rows="5"
+              required
+            ></textarea>
             <div class="contact__bar"></div>
           </div>
 
@@ -271,7 +287,7 @@ const setupAnimations = () => {
   animateFormFields();
   animateSubmitButton();
   animateSpheres();
-  
+
   // Refresh ScrollTrigger with delay to ensure all triggers are properly calculated
   gsap.delayedCall(0.5, () => {
     ScrollTrigger.refresh();
@@ -285,7 +301,7 @@ onMounted(async () => {
 });
 
 onBeforeUnmount(() => {
-  ScrollTrigger.getAll().forEach(st => st.kill());
+  ScrollTrigger.getAll().forEach((st) => st.kill());
 });
 </script>
 

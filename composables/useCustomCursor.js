@@ -21,7 +21,9 @@ export const useCustomCursor = () => {
   // ==================== UTILITIES ====================
   const isClickableElement = (element) => {
     if (!element) return false;
-    return !!element.closest('a, button, [role="button"], input[type="button"], input[type="submit"], [data-cursor-pointer]');
+    return !!element.closest(
+      'a, button, [role="button"], input[type="button"], input[type="submit"], [data-cursor-pointer]'
+    );
   };
 
   const clearHoverTimeout = () => {

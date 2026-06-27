@@ -7,7 +7,7 @@
     </header>
 
     <h3 ref="subtitle" class="skills-section__subtitle">
-      Desenvolvedor <br>
+      Desenvolvedor <br />
       Front<span class="skills-section__subtitle--underlined">End</span> JR.
     </h3>
 
@@ -22,7 +22,6 @@
         {{ skill.name }}
       </div>
     </div>
-
 
     <RouterLink to="AboutMe">
       <div class="about-me__btn">
@@ -40,39 +39,39 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 // ==================== DATA ====================
 const skillsList = [
-  { name: "React", icon: "mdi:react" },
-  { name: "Next.js", icon: "cib:next-js" },
-  { name: "Vue.js", icon: "mdi:vuejs" },
-  { name: "Nuxt.js", icon: "lineicons:nuxt" },
-  { name: "JavaScript", icon: "mdi:language-javascript" },
-  { name: "TypeScript", icon: "mdi:language-typescript" },
-  { name: "Redux", icon: "tabler:brand-redux" },
-  { name: "Pinia", icon: "simple-icons:pinia" },
-  { name: "Styled Components", icon: "file-icons:styledcomponents" },
-  { name: "Sass", icon: "mdi:sass" },
-  { name: "Bootstrap", icon: "ri:bootstrap-fill" },
-  { name: "tailwind", icon: "mdi:tailwind" },
-  { name: "Jest", icon: "file-icons:jest" },
-  { name: "Cypress", icon: "tabler:brand-cypress" },
-  { name: "SQL", icon: "material-symbols:database" },
-  { name: "MySQL", icon: "tabler:brand-mysql" }
-]
+  { name: 'React', icon: 'mdi:react' },
+  { name: 'Next.js', icon: 'cib:next-js' },
+  { name: 'Vue.js', icon: 'mdi:vuejs' },
+  { name: 'Nuxt.js', icon: 'lineicons:nuxt' },
+  { name: 'JavaScript', icon: 'mdi:language-javascript' },
+  { name: 'TypeScript', icon: 'mdi:language-typescript' },
+  { name: 'Redux', icon: 'tabler:brand-redux' },
+  { name: 'Pinia', icon: 'simple-icons:pinia' },
+  { name: 'Styled Components', icon: 'file-icons:styledcomponents' },
+  { name: 'Sass', icon: 'mdi:sass' },
+  { name: 'Bootstrap', icon: 'ri:bootstrap-fill' },
+  { name: 'tailwind', icon: 'mdi:tailwind' },
+  { name: 'Jest', icon: 'file-icons:jest' },
+  { name: 'Cypress', icon: 'tabler:brand-cypress' },
+  { name: 'SQL', icon: 'material-symbols:database' },
+  { name: 'MySQL', icon: 'tabler:brand-mysql' }
+];
 
 // ==================== REFS ====================
-const subtitle = ref(null)
-const subtitleAnimation = ref(null)
+const subtitle = ref(null);
+const subtitleAnimation = ref(null);
 
 // ==================== ANIMATIONS ====================
 const animateSubtitle = () => {
-  if (!subtitle.value) return
+  if (!subtitle.value) return;
 
   subtitleAnimation.value = gsap.from(subtitle.value, {
     opacity: 0,
@@ -84,8 +83,8 @@ const animateSubtitle = () => {
       start: 'top 100%',
       once: true
     }
-  })
-}
+  });
+};
 
 const animateSkillsCards = () => {
   gsap.from('.skills-section__skill', {
@@ -104,27 +103,27 @@ const animateSkillsCards = () => {
     duration: 0.8,
     stagger: 0.1,
     ease: 'power3.out'
-  })
-}
+  });
+};
 
 const cleanupAnimations = () => {
   if (subtitleAnimation.value && subtitleAnimation.value.scrollTrigger) {
-    subtitleAnimation.value.scrollTrigger.kill()
-    subtitleAnimation.value.kill()
+    subtitleAnimation.value.scrollTrigger.kill();
+    subtitleAnimation.value.kill();
   } else {
-    ScrollTrigger.getAll().forEach(st => st.kill())
+    ScrollTrigger.getAll().forEach((st) => st.kill());
   }
-}
+};
 
 // ==================== LIFECYCLE ====================
 onMounted(() => {
-  animateSubtitle()
-  animateSkillsCards()
-})
+  animateSubtitle();
+  animateSkillsCards();
+});
 
 onBeforeUnmount(() => {
-  cleanupAnimations()
-})
+  cleanupAnimations();
+});
 </script>
 
 <style lang="scss" scoped>
@@ -345,7 +344,7 @@ $bp-xs: 480px;
 
       transform: scaleY(0);
       transform-origin: bottom;
-      transition: transform .6s cubic-bezier(.215, .61, .355, 1);
+      transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
     &:hover {

@@ -1,12 +1,12 @@
 <template>
   <header class="header">
     <RouterLink to="/">
-      <img class="header__logo" src="/public/images/Logo.webp" alt="">
+      <img class="header__logo" src="/public/images/Logo.webp" alt="" />
     </RouterLink>
 
     <nav class="header__right">
-      <a 
-        href="https://rodrigo-dev-curriculo.vercel.app/Rodrigo%20Rodrigues%20-%20Curriculo.pdf" 
+      <a
+        href="https://rodrigo-dev-curriculo.vercel.app/Rodrigo%20Rodrigues%20-%20Curriculo.pdf"
         target="_blank"
         class="header__btn"
       >
@@ -55,8 +55,8 @@
 
   &__btn {
     position: relative;
-    overflow: hidden;  
-    z-index: 0;  
+    overflow: hidden;
+    z-index: 0;
 
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
@@ -66,16 +66,16 @@
     background: transparent;
     color: $color-ice-gray;
 
-    transition: color .6s;
+    transition: color 0.6s;
     cursor: pointer;
 
     @media (max-width: 760px) {
-      padding: 0.70rem 1rem;
+      padding: 0.7rem 1rem;
       font-size: 0.8rem;
     }
 
     @media (max-width: 520px) {
-      padding: 0.60rem 1rem;
+      padding: 0.6rem 1rem;
       font-size: 0.65rem;
     }
 
@@ -90,7 +90,7 @@
 
       transform: scaleY(0);
       transform-origin: bottom;
-      transition: transform .6s cubic-bezier(.215, .61, .355, 1);
+      transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
     }
 
     &:hover {
