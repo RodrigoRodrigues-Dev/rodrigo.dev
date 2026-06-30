@@ -4,7 +4,12 @@
       <h2 class="projects__title">003 / Projetos</h2>
     </div>
     <div class="projects__grid">
-      <a class="projects__card" v-for="project in projects" :key="project.title" @click="navigateToProject(project)">
+      <a
+        class="projects__card"
+        v-for="project in projects"
+        :key="project.title"
+        @click="navigateToProject(project)"
+      >
         <div class="projects__header">
           <span>{{ project.year }}</span>
           <Icon class="projects__icon" name="material-symbols:arrow-outward" />
@@ -13,8 +18,8 @@
           <p class="projects__description">{{ project.category }}</p>
           <h3 class="projects__description-title">{{ project.title }}</h3>
           <ul class="projects__technologies">
-            <li v-for="technology in project.technologies" :key="technology">
-              <Icon class="projects__tech-icon" :name="technology" />
+            <li v-for="tech in project.technologies" :key="tech.name">
+              <Icon class="projects__tech-icon" :name="tech.icon" />
             </li>
           </ul>
         </div>
@@ -112,7 +117,7 @@ const handleCardMouseLeave = (event) => {
 
 const setupCardAnimations = () => {
   const cards = document.querySelectorAll('.projects__card');
-  cards.forEach(card => {
+  cards.forEach((card) => {
     card.addEventListener('mouseenter', handleCardMouseEnter);
     card.addEventListener('mouseleave', handleCardMouseLeave);
   });
@@ -219,15 +224,15 @@ onMounted(async () => {
     @media (min-width: 1091px) {
       grid-template-columns: repeat(3, minmax(0, 1fr));
 
-      &>*:last-child {
+      & > *:last-child {
         grid-column: span 1;
       }
 
-      &>*:last-child:nth-child(3n + 1) {
+      & > *:last-child:nth-child(3n + 1) {
         grid-column: span 3;
       }
 
-      &>*:last-child:nth-child(3n + 2) {
+      & > *:last-child:nth-child(3n + 2) {
         grid-column: span 2;
       }
     }

@@ -3,14 +3,27 @@
     <section class="project-detail">
       <!-- Botão de voltar -->
       <RouterLink to="/">
-        <Icon name="material-symbols:arrow-left-alt" class="project-detail__prev" />
+        <Icon
+          name="material-symbols:arrow-left-alt"
+          class="project-detail__prev"
+        />
       </RouterLink>
 
       <div class="project-detail__container">
-        <img ref="pageImage" class="project-detail__page-image" :src="projectPageImage" alt="" @load="onImageLoad" />
+        <img
+          ref="pageImage"
+          class="project-detail__page-image"
+          :src="projectPageImage"
+          alt=""
+          @load="onImageLoad"
+        />
 
         <div class="project-detail__hero">
-          <img class="project-detail__hero-image" :src="projectLogoUrl" alt="Imagem do Projeto Nike" />
+          <img
+            class="project-detail__hero-image"
+            :src="projectLogoUrl"
+            alt="Imagem do Projeto Nike"
+          />
         </div>
       </div>
 
@@ -29,13 +42,13 @@
                 <p class="project-detail__meta-label">Categoria:</p>
                 <span class="project-detail__meta-value">{{
                   projectCategory
-                  }}</span>
+                }}</span>
               </div>
               <div class="project-detail__meta-item">
                 <p class="project-detail__meta-label">Ano:</p>
                 <span class="project-detail__meta-value">{{
                   projectYear
-                  }}</span>
+                }}</span>
               </div>
             </div>
             <p class="project-detail__description">{{ projectDescription }}</p>
@@ -49,8 +62,8 @@
         </div>
 
         <ul class="project-detail__technologies">
-          <li v-for="tech in projectTechnologies" :key="tech">
-            <Icon :name="tech" size="22px" />
+          <li v-for="tech in projectTechnologies" :key="tech.name">
+            <Icon :name="tech.icon" size="22px" />
           </li>
         </ul>
 
@@ -58,11 +71,23 @@
 
         <!-- Links para Projeto e GitHub -->
         <div class="project-detail__links">
-          <a class="project-detail__link project-detail__link--vercel" :href="projectVercelUrl" target="_blank">
-            <img :src="projectLogoUrl" alt="Logo do Projeto" class="project-detail__link__logo" />
+          <a
+            class="project-detail__link project-detail__link--vercel"
+            :href="projectVercelUrl"
+            target="_blank"
+          >
+            <img
+              :src="projectLogoUrl"
+              alt="Logo do Projeto"
+              class="project-detail__link__logo"
+            />
             Ver Projeto
           </a>
-          <a class="project-detail__link project-detail__link--github" :href="projectGithubUrl" target="_blank">
+          <a
+            class="project-detail__link project-detail__link--github"
+            :href="projectGithubUrl"
+            target="_blank"
+          >
             <Icon name="uil:github" size="22px" />
             GitHub
           </a>
@@ -77,7 +102,9 @@
         </div>
       </div>
 
-      <div class="project-detail__marquee-wrapper project-detail__marquee-wrapper--left">
+      <div
+        class="project-detail__marquee-wrapper project-detail__marquee-wrapper--left"
+      >
         <div class="project-detail__marquee project-detail__marquee--reverse">
           <span v-for="(item, index) in marquee" :key="index">
             {{ item }}
@@ -112,12 +139,15 @@ const animateMarquee = () => {
         gsap.set(el, { x: 0 });
       }
     });
-    const elReverse = document.querySelector('.project-detail__marquee--reverse');
+    const elReverse = document.querySelector(
+      '.project-detail__marquee--reverse'
+    );
     if (!elReverse) return;
 
     const totalWidthReverse = elReverse.scrollWidth / 2;
 
-    gsap.fromTo(elReverse,
+    gsap.fromTo(
+      elReverse,
       { x: -totalWidthReverse },
       {
         x: 0,
@@ -142,7 +172,7 @@ const {
   logoUrl: projectLogoUrl,
   year: projectYear,
   category: projectCategory,
-  description: projectDescription,
+  description: projectDescription
 } = toRefs(projectStore);
 
 const pageImage = ref(null);
@@ -162,14 +192,27 @@ function onImageLoad(event) {
 
     gsap.fromTo(
       '.project-detail__hero',
-      { height: (rectH + 100) + 'px' },
-      { height: '100px', opacity: 1, duration: 2.5, delay: 1, ease: 'power4.out' }
+      { height: rectH + 100 + 'px' },
+      {
+        height: '100px',
+        opacity: 1,
+        duration: 2.5,
+        delay: 1,
+        ease: 'power4.out'
+      }
     );
 
     gsap.fromTo(
       '.project-detail__hero-image',
       { top: '20%', opacity: 1, width: 100 + 'px' },
-      { top: '50%', opacity: 1, duration: 0.8, delay: 1, ease: 'power2.out', width: 40 + 'px' }
+      {
+        top: '50%',
+        opacity: 1,
+        duration: 0.8,
+        delay: 1,
+        ease: 'power2.out',
+        width: 40 + 'px'
+      }
     );
 
     gsap.fromTo(
@@ -190,12 +233,12 @@ const marquee = computed(() => {
   if (!projectName.value) return [];
   const items = Array.from({ length: 50 }, () => projectName.value);
   return [...items, ...items];
-})
+});
 
 onMounted(() => {
   if (pageImage.value && pageImage.value.complete) {
     onImageLoad();
-  };
+  }
   animateMarquee();
 });
 </script>
@@ -206,7 +249,7 @@ onMounted(() => {
   position: relative;
   margin-bottom: 6rem;
   border-radius: 4rem;
-  background-color: #2D323A;
+  background-color: #2d323a;
 
   @media (max-width: 1090px) {
     padding: 0 3rem;
