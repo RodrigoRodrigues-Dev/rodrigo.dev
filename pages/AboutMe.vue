@@ -94,7 +94,11 @@ import { gsap } from 'gsap';
 const isLoading = ref(true);
 
 const initScrollRestoration = () => {
-  if (typeof window !== 'undefined' && window.history && 'scrollRestoration' in window.history) {
+  if (
+    typeof window !== 'undefined' &&
+    window.history &&
+    'scrollRestoration' in window.history
+  ) {
     window.history.scrollRestoration = 'manual';
   }
 };
@@ -483,7 +487,7 @@ onMounted(() => {
 </style>
 
 <style lang="scss" scoped>
-  .about-me__header {
-    background-color: $color-steel-blue;
-  }
+.about-me__header {
+  background-color: $color-steel-blue;
+}
 </style>
